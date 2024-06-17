@@ -29,6 +29,7 @@
 
 
     <modules>
+        <module>rookie-yto-express</module>
         <module>rookie-zto-express</module>
     </modules>
 
@@ -38,12 +39,20 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <httpclient.version>4.5.13</httpclient.version>
+        <hutool.version>5.8.28</hutool.version>
         <!--    <jetty.version>9.4.51.v20230217</jetty.version>-->
         <!-- 这个不能用10以上的版本，不支持jdk8-->
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
