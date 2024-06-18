@@ -15,11 +15,11 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-<!--            <version>${httpclient.version}</version>-->
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>cn.hutool</groupId>-->
+<!--            <artifactId>hutool-all</artifactId>-->
+<!--&lt;!&ndash;            <version>${httpclient.version}</version>&ndash;&gt;-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>

@@ -2,10 +2,7 @@ package com.rookie.bigdata.zto.service.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.rookie.bigdata.zto.bean.afterservice.CancelInterceptRequest;
-import com.rookie.bigdata.zto.bean.afterservice.CancelInterceptResult;
-import com.rookie.bigdata.zto.bean.afterservice.CreateInterceptRequest;
-import com.rookie.bigdata.zto.bean.afterservice.CreateInterceptResult;
+import com.rookie.bigdata.zto.bean.afterservice.*;
 import com.rookie.bigdata.zto.service.ZtoAfterSaleService;
 import com.rookie.bigdata.zto.service.ZtoService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +17,7 @@ import java.io.IOException;
  * @Date 2024/6/13 13:50
  * @Version 1.0
  */
-@Slf4j
+//@Slf4j
 @RequiredArgsConstructor
 public class ZtoAfterSaleServiceImpl implements ZtoAfterSaleService {
 
@@ -63,5 +60,22 @@ public class ZtoAfterSaleServiceImpl implements ZtoAfterSaleService {
         String postJson = ztoService.postJson(url, GSON.toJson(createInterceptRequest), null);
 
         return GSON.fromJson(postJson, CreateInterceptResult.class);
+    }
+
+    /**
+     * https://open.zto.com/#/interfaces?schemeCode=&resourceGroup=40&apiName=thirdcenter.queryInterceptAndReturnStatus
+     * thirdcenter.queryInterceptAndReturnStatus-拦截状态查询接口
+     *
+     * @param queryInterceptRequest
+     * @return
+     * @throws IOException
+     */
+    @Override
+    public QueryInterceptResult queryInterceptAndReturnStatus(QueryInterceptRequest queryInterceptRequest) throws IOException {
+        String url = String.format("%s/thirdcenter.queryInterceptAndReturnStatus", this.ztoService.getZtoBaseUrl());
+
+        String postJson = ztoService.postJson(url, GSON.toJson(queryInterceptRequest), null);
+
+        return GSON.fromJson(postJson, QueryInterceptResult.class);
     }
 }

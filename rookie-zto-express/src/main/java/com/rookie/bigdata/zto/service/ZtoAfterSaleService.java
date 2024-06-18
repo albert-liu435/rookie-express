@@ -1,9 +1,6 @@
 package com.rookie.bigdata.zto.service;
 
-import com.rookie.bigdata.zto.bean.afterservice.CancelInterceptRequest;
-import com.rookie.bigdata.zto.bean.afterservice.CancelInterceptResult;
-import com.rookie.bigdata.zto.bean.afterservice.CreateInterceptRequest;
-import com.rookie.bigdata.zto.bean.afterservice.CreateInterceptResult;
+import com.rookie.bigdata.zto.bean.afterservice.*;
 
 import java.io.IOException;
 
@@ -40,5 +37,14 @@ public interface ZtoAfterSaleService {
      */
     CreateInterceptResult createIntercept(CreateInterceptRequest createInterceptRequest) throws IOException;
 
+    /**
+     * https://open.zto.com/#/interfaces?schemeCode=&resourceGroup=40&apiName=thirdcenter.queryInterceptAndReturnStatus
+     * thirdcenter.queryInterceptAndReturnStatus-拦截状态查询接口
+     *
+     * @param queryInterceptRequest
+     * @return
+     * @throws IOException
+     */
+    QueryInterceptResult queryInterceptAndReturnStatus(QueryInterceptRequest queryInterceptRequest) throws IOException;
 
 }

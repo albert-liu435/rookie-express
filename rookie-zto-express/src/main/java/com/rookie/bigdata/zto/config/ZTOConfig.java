@@ -14,13 +14,13 @@ import lombok.Data;
 @Data
 public class ZTOConfig {
 
-    private static final String DEFAULT_ZTO_PRO_BASE_URL = "https://api.mch.weixin.qq.com";
+    private static final String DEFAULT_ZTO_PRO_BASE_URL = "https://japi-test.zto.com";
 
-    private static final String DEFAULT_ZTO_UAT_BASE_URL = "https://api.mch.weixin.qq.com";
+    private static final String DEFAULT_ZTO_UAT_BASE_URL = "https://japi.zto.com";
 
 
     private String appKey;
-    private String apSecret;
+    private String appSecret;
 
     /**
      * 微信支付接口请求地址域名部分.
