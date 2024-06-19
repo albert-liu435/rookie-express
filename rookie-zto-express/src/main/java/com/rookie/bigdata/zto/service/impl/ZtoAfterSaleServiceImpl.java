@@ -78,4 +78,30 @@ public class ZtoAfterSaleServiceImpl implements ZtoAfterSaleService {
 
         return GSON.fromJson(postJson, QueryInterceptResult.class);
     }
+
+    /**
+     * https://open.zto.com/#/interfaces?schemeCode=&resourceGroup=40&apiName=zto.open.merchant.incident.create
+     * zto.open.merchant.incident.create-售后工单创建接口
+     *
+     * @param merChantIncidentCreateRequest
+     * @return
+     * @throws IOException
+     */
+    @Override
+    public MerChantIncidentCreateResult incidentCreate(MerChantIncidentCreateRequest merChantIncidentCreateRequest) throws IOException {
+        String url = String.format("%s/zto.open.merchant.incident.create", this.ztoService.getZtoBaseUrl());
+
+        String postJson = ztoService.postJson(url, GSON.toJson(merChantIncidentCreateRequest), null);
+
+        return GSON.fromJson(postJson, MerChantIncidentCreateResult.class);
+    }
+
+    @Override
+    public MerChantIncidentQueryResult incidentQuery(MerChantIncidentQueryRequest merChantIncidentQueryRequest) throws IOException {
+        String url = String.format("%s/zto.open.merchant.incident.query", this.ztoService.getZtoBaseUrl());
+
+        String postJson = ztoService.postJson(url, GSON.toJson(merChantIncidentQueryRequest), null);
+
+        return GSON.fromJson(postJson, MerChantIncidentQueryResult.class);
+    }
 }

@@ -47,4 +47,25 @@ public interface ZtoAfterSaleService {
      */
     QueryInterceptResult queryInterceptAndReturnStatus(QueryInterceptRequest queryInterceptRequest) throws IOException;
 
+
+    /**
+     * https://open.zto.com/#/interfaces?schemeCode=&resourceGroup=40&apiName=zto.open.merchant.incident.create
+     * zto.open.merchant.incident.create-售后工单创建接口
+     *
+     * @param merChantIncidentCreateRequest
+     * @return
+     * @throws IOException
+     */
+    MerChantIncidentCreateResult incidentCreate(MerChantIncidentCreateRequest merChantIncidentCreateRequest) throws IOException;
+
+    /**
+     * https://open.zto.com/#/interfaces?schemeCode=&resourceGroup=40&apiName=zto.open.merchant.incident.query
+     * zto.open.merchant.incident.query-售后工单状态查询接口
+     *
+     * @param merChantIncidentQueryRequest
+     * @return
+     * @throws IOException
+     */
+    MerChantIncidentQueryResult incidentQuery(MerChantIncidentQueryRequest merChantIncidentQueryRequest) throws IOException;
+
 }

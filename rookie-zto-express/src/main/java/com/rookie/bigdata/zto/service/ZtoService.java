@@ -36,5 +36,12 @@ public interface ZtoService {
     void setConfig(ZTOConfig config);
 
 
-    String postJson(String url, String jsonBody,Long timestamp) throws IOException;
+    String postJson(String url, String jsonBody, Long timestamp) throws IOException;
+
+    /**
+     * 中通售后服务
+     *
+     * @return
+     */
+    ZtoAfterSaleService getZtoAfterSaleService();
 }
