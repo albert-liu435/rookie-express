@@ -29,6 +29,16 @@ public class ZTOConfig {
 
 
     /**
+     * http请求连接超时时间.
+     */
+    private int httpConnectionTimeout = 5000;
+
+    /**
+     * http请求数据读取等待时间.
+     */
+    private int httpTimeout = 10000;
+
+    /**
      * 返回所设置的中通接口的域名
      *
      * @return 中通接口地址的域名
@@ -46,6 +56,13 @@ public class ZTOConfig {
      * 默认不使用
      */
     private boolean useSandboxEnv = false;
+
+
+    /**
+     * 支持扩展httpClientBuilder
+     */
+    private HttpClientBuilderCustomizer httpClientBuilderCustomizer;
+    private HttpClientBuilderCustomizer apiV3HttpClientBuilderCustomizer;
 
 
     /**

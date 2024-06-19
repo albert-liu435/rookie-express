@@ -17,4 +17,27 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChangeInterceptRequest {
+    //运单号码
+    private String waybillNo;
+
+    //问题描述
+    private String wantedDesc;
+
+    //新收件省名称
+    private String receiveProvName;
+
+    //新收件市名称
+    private String receiveCityName;
+
+    //新收件区名称
+    private String receiveCountyName;
+
+    //新收件详细地址
+    private String receiveAddress;
+
+    //新收件人姓名
+    private String receiverName;
+
+    //新收件人电话
+    private String receiverTel;
 }

@@ -1,5 +1,6 @@
 package com.rookie.bigdata.zto.service;
 
+import com.rookie.bigdata.common.service.ExpressService;
 import com.rookie.bigdata.zto.config.ZTOConfig;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.io.IOException;
  * @Date 2024/6/13 11:31
  * @Version 1.0
  */
-public interface ZtoService {
+public interface ZtoExpressService extends ExpressService {
 
     /**
      * 中通接口地址的域名.
@@ -44,4 +45,11 @@ public interface ZtoService {
      * @return
      */
     ZtoAfterSaleService getZtoAfterSaleService();
+
+    /**
+     * 中通基础服务
+     *
+     * @return
+     */
+    BasicZtoService getBasicZtoService();
 }

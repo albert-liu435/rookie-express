@@ -1,29 +1,33 @@
 package com.rookie.bigdata.zto.service.impl;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.rookie.bigdata.zto.config.ZTOConfig;
+import com.rookie.bigdata.zto.service.BasicZtoService;
 import com.rookie.bigdata.zto.service.ZtoAfterSaleService;
 import com.rookie.bigdata.zto.service.ZtoExpressService;
 import com.rookie.bigdata.zto.util.HttpUtil;
 import com.rookie.bigdata.zto.util.ZopDigestUtil;
 import lombok.Getter;
 import lombok.Setter;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Class ZtoExpressServiceImpl
+ * @Class BaseZtoExpressService
  * @Description
  * @Author rookie
- * @Date 2024/6/18 16:57
+ * @Date 2024/6/19 17:40
  * @Version 1.0
  */
-public abstract class BaseZtoServiceImpl implements ZtoExpressService {
+public abstract class BaseZtoExpressServiceImpl implements ZtoExpressService {
+
+
+    private static final Gson GSON = new GsonBuilder().create();
 
     final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -31,7 +35,11 @@ public abstract class BaseZtoServiceImpl implements ZtoExpressService {
     @Getter
     private ZtoAfterSaleService ztoAfterSaleService = new ZtoAfterSaleServiceImpl(this);
 
-    private ZTOConfig config;
+    @Setter
+    @Getter
+    private BasicZtoService basicZtoService = new BasicZtoServiceImpl(this);
+
+    protected ZTOConfig config;
 
     @Override
     public String getZtoBaseUrl() {
@@ -48,8 +56,13 @@ public abstract class BaseZtoServiceImpl implements ZtoExpressService {
         this.config = config;
     }
 
+
     @Override
     public String postJson(String url, String jsonBody, Long timestamp) throws IOException {
+
+
+
+
         Map<String, String> headers = new HashMap<>();
         String strToDigest = jsonBody + this.config.getAppSecret();
         headers.put("x-companyid", this.config.getAppKey());

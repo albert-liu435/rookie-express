@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.rookie.bigdata.zto.bean.afterservice.*;
 import com.rookie.bigdata.zto.service.ZtoAfterSaleService;
-import com.rookie.bigdata.zto.service.ZtoService;
+import com.rookie.bigdata.zto.service.ZtoExpressService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,7 +23,7 @@ public class ZtoAfterSaleServiceImpl implements ZtoAfterSaleService {
 
     private static final Gson GSON = new GsonBuilder().create();
 
-    private final ZtoService ztoService;
+    private final ZtoExpressService ztoService;
 
     /**
      * 拦截服务取消接口，取消商家/ISV发起的拦截工单
