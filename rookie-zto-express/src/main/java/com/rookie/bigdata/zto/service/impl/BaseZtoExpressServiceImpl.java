@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.rookie.bigdata.zto.config.ZTOConfig;
 import com.rookie.bigdata.zto.service.BasicZtoService;
+import com.rookie.bigdata.zto.service.SendZtoService;
 import com.rookie.bigdata.zto.service.ZtoAfterSaleService;
 import com.rookie.bigdata.zto.service.ZtoExpressService;
 import com.rookie.bigdata.zto.util.HttpUtil;
@@ -38,6 +39,10 @@ public abstract class BaseZtoExpressServiceImpl implements ZtoExpressService {
     @Setter
     @Getter
     private BasicZtoService basicZtoService = new BasicZtoServiceImpl(this);
+
+    @Setter
+    @Getter
+    private SendZtoService sendZtoService = new SendZtoServiceImpl(this);
 
     protected ZTOConfig config;
 

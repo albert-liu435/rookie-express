@@ -1,9 +1,6 @@
 package com.rookie.bigdata.zto.service;
 
-import com.rookie.bigdata.zto.bean.basicservice.AreaUnobstructedRequest;
-import com.rookie.bigdata.zto.bean.basicservice.AreaUnobstructedResult;
-import com.rookie.bigdata.zto.bean.basicservice.StructureNamePhoneAddressRequest;
-import com.rookie.bigdata.zto.bean.basicservice.StructureNamePhoneAddressResult;
+import com.rookie.bigdata.zto.bean.basicservice.*;
 
 import java.io.IOException;
 
@@ -38,4 +35,40 @@ public interface BasicZtoService {
      * @throws IOException
      */
     StructureNamePhoneAddressResult structureNamePhoneAddress(StructureNamePhoneAddressRequest structureNamePhoneAddressRequest) throws IOException;
+
+    /**
+     * https://open.zto.com/#/interfaces?schemeCode=&resourceGroup=10&apiName=zto.open.bindingEaccount
+     * zto.open.bindingEaccount-绑定电子面单
+     * 绑定电子面单与appKey的关系，以便下单或查询轨迹
+     *
+     * @param bindingEaccountRequest
+     * @return
+     * @throws IOException
+     */
+    BindingEaccountResult bindingEaccount(BindingEaccountRequest bindingEaccountRequest) throws IOException;
+
+
+    /**
+     * https://open.zto.com/#/interfaces?schemeCode=&resourceGroup=10&apiName=zto.black.api.checkEmployeeBlack
+     * zto.black.api.checkEmployeeBlack-验证是否是员工类黑名单
+     * 根据身份证号或手机号验证是否是员工类黑名单
+     *
+     * @param checkEmployeeBlackRequest
+     * @return
+     * @throws IOException
+     */
+    CheckEmployeeBlackResult checkEmployeeBlack(CheckEmployeeBlackRequest checkEmployeeBlackRequest) throws IOException;
+
+
+    /**
+     * https://open.zto.com/#/interfaces?schemeCode=&resourceGroup=10&apiName=zto.toc.selectAcceptPartCoupon
+     * zto.toc.selectAcceptPartCoupon-接入方查询优惠券
+     * 接入方通过此接口查询通过开放平台发放的中通优惠券
+     *
+     * @param acceptPartCouponRequest
+     * @return
+     * @throws IOException
+     */
+    AcceptPartCouponResult selectAcceptPartCoupon(AcceptPartCouponRequest acceptPartCouponRequest) throws IOException;
+
 }

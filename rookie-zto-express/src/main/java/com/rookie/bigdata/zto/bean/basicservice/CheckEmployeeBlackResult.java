@@ -6,17 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @Class BindingEaccountResult
+ * @Class CheckEmployeeBlackResult
  * @Description
  * @Author rookie
- * @Date 2024/6/19 11:58
+ * @Date 2024/6/20 9:03
  * @Version 1.0
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BindingEaccountResult {
+public class CheckEmployeeBlackResult {
 
     /**
      * 返回状态，true：调用成功；false：调用失败
